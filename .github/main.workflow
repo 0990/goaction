@@ -1,11 +1,11 @@
-workflow "New workflow" {
+workflow "Build and Test" {
   on = "push"
-  resolves = ["new-action"]
+  resolves = ["onlytest"]
 }
 
-action "new-action" {
-    uses = "./action-a"
-   env = {
+action "onlytest" {
+  uses = "./action-a"
+  env = {
     MY_NAME = "Mona"
   }
   args = "\"Hello world, I'm $MY_NAME!\""
